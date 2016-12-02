@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-app ng-init="quantity=1;price=100">
+        Quantity <input type="text" name="qty" ng-model="quantity" /> <br />
+        Price:  <input type="text" name="price" ng-model="price" /> <br />
+        <p>Total Amount {{quantity * price}}</p>
+        <hr />
+        <!--string concatenation-->
+        <div ng-init="fname='A';lname='B'">
+            First Name: <input type="text" name="fname" ng-model="fname" /> <br />
+            Last Name: <input type="text" name="fname" ng-model="lname" /> <br />
+            <br />
+            Hello {{fname +" " + lname}}
+        </div>
+        <!--how to Declare objects-->
+        <div ng-init="person={fname:'A',lname:'B'}">
+            
+            <input type="text" name="fname" ng-model="person.fname" />
+            <input type="text" name="lname" ng-model="person.lname" />
+            Person name is {{persone.fname+person.lname}}
+
+        </div>
+        <div ng-init="Array=[1,12,4,4]">
+            <input type="text" name="array" ng-model="Array" /><br />
+            Array[1]*Array[2] is  {{Array[1]*Array[2]}}
+        </div>
+        <div ng-init="person=[{fname:'A1',lname:'B1'},{fname:'A2',lname:'B2'},{fname:'A3',lname:'B3'}]">
+
+            Hello {{person[0].fname+" "+Person[0].lname}}<br/>
+            Hello {{person[1].fname+" "+Person[1].lname}}<br/>
+            Hello {{person[2].fname+" "+Person[2].lname}}<br/>
+        </div>                         
+    </div>
