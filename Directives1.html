@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head >
+    
+    <script src="angular.js"></script>
+    <meta charset="utf-8" />
+    <title>ng-bind</title>
+    
+</head>
+<body ng-app>
+    <div ng-init="">
+
+        <input type="text" name="firstname" ng-model="firstname" />
+        <input type="text" name="lastname" ng-model="lastname" />
+        <p>Hello <span ng-bind ="firstname"></span></p>
+        <p>Hello <span ng-bind-template ="{{firstname}} {{lastname}}"></span></p>
+       
+    
+        <!--the expression ng-bind-template can be used incase of multiple expression as given below since some html elements such as TITLE and
+        OPTION do not have span tags.-->
+    
+FirstName: <input type="text" ng-model="FirstName"><br/>
+Last Name: <input type="text" ng-model="LastName"><br/>
+<p>Hello <span ng-bind="FirstName"></span> <span ng-bind="LastName"></span></p>
+<p>Hello <span ng-bind-template="{{FirstName}} {{LastName}}"></span></p>
+
+    </div>
+</body>
+</html>
