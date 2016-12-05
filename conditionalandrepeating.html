@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head >
+    
+    <script src="angular.js"></script>
+    <meta charset="utf-8" />
+    <title>ng-bind</title>
+    
+</head>
+<body ng-app >
+    
+    <div>
+        <!--This code is to show the basic difference between ng-show and ng-if in  
+        ng-if the element will be removed from DOM unlike ng-show if condition
+        is false-->
+        <input type="checkbox" name="chkshow" ng-model="chkshow" />bokka
+        <div id="div1" ng-show ="chkshow">This is a show box</div>
+        <div id="div2" ng-if="chkshow">this is a if box</div>
+
+        <input type="button" value="This is DIV1 Element" onclick="alert(document.getElementById('div1') != null);"/>
+
+        <input type="button" value="This is DIV2 Element" onclick="alert(document.getElementById('div2') != null);"/>
+    </div>
+    <hr />
+    <br />
+    <!--we are trying to switch between different statements based on users selection-->
+   <div >
+<select ng-model="selection">
+    <option value="1">one</option>
+    <option value="2">two</option>
+    <option value="3">three</option>
+    <option value="4">four</option>
+    
+</select>
+       <div ng-switch on="selection" ng-init="selection=1">
+
+           <div ng-switch-when="1">this is one</div>
+            <div ng-switch-when="2">this is two</div>
+            <div ng-switch-when="3">this is three</div>
+            <div ng-switch-default>this is default meaning we don't have a statement for it.</div>
+       </div>
+       <hr />
+       <br />
+
+       <hr />
+
+       <br />
+       <!--THe below ng-repeat directive is use to show how to loop through array-->
+       <div ng-init="people=[{Name:'A',Age:'20'},{Name:'B',Age:'30'},{Name:'C',Age:'40'}]">
+
+           <table>
+               <tr>
+                   <th>Name</th>
+                   <th>Age</th>
+                   
+               </tr>
+               <tr ng-repeat="person in people">
+
+                   <td>{{person.Name}}</td>
+                   <td>{{person.Age}}</td>
+               </tr>
+           </table>
+       </div>
+
+       <hr />
+       <br />
+
+    <div ng-mouseover="count = count + 1" ng-init="count=0">Mouse over me!</div> <h1>{{count}}</h1>
+</body>
+</html>
