@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="angular.js"></script>
+          <style>
+            .red
+            {
+            color:red;
+            }
+            .strike
+            {
+            text-decoration:line-through;
+            }
+            .bold
+            {
+            font-weight:bold;
+            }
+
+        </style>
+    
+    <title>class and style directives</title>
+</head>
+<body>
+
+  
+        <div ng-app>
+            <input type="text" name="styles" ng-model="styles" />
+            <p ng-class="styles">this is the text</p>
+
+            <div ng-class="[one,two,three]">This is an array</div>
+            <input type="text" name="styles" ng-model="one" /><br />
+            <input type="text" name="styles" ng-model="two" /><br />
+            <input type="text" name="styles" ng-model="three" /><br />
+
+            <p ng-class="{red:r, bold:b,strike:s}">This is the text</p>
+           red <input type="checkbox" name="chkbox" ng-model="r"/>
+           bold <input type="checkbox" name="chkbox" ng-model="b"/> 
+           strike <input type="checkbox" name="chkbox" ng-model="s"/>
+            <br />
+
+            <p ng-class="{red:true, bold:false,strike:true}">This is the text</p>
+    </div>
+
+</body>
+</html>
